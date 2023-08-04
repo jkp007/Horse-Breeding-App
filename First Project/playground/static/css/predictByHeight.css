@@ -1,0 +1,46 @@
+.container{
+    background-color: rgb(5,25,62);
+    height: 600px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart{
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px;
+}
+.heading{   
+    font-size: x-large;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    padding-top: 5%;
+}
+.body{
+    padding-left: 10%;
+    padding-top: 7%;
+    font-size: large;
+    display:inline;
+    float:left;
+}
+.inputbox{
+    margin-left: 30px;
+    border: 2px solid #5a5656;
+}
+.button {
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 175px;
+    background-color: #008CBA;
+  } 

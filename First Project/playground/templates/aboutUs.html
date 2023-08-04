@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/aboutUs.css' %}"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    {% include 'navbar.html'%}
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div
+              class="container"
+              style="width: 100%; height: 250px; overflow: hidden"
+            >
+              <img
+                src="{% static 'images/Pratyusha Tripathi.jpeg' %}"
+                alt="Avatar"
+                style="width: 100%; height: auto"
+              />
+            </div>
+            <div class="container" style="width: 100%; height: 240px">
+              <h4><b>Pratyusha Tripathi</b></h4>
+              <p class="description">
+                A Computer Science engineer who is pursuing her MS in Business
+                Analytics graduate from UCD Michael Smurfit Graduate Business
+                School, she brings invaluable expertise in optimization,
+                statistical methods, and data management. With a track record of
+                driving data-driven insights as a consultant at ZS Associates
+                and E&Y her proficiency in Python, Tableau, and Microsoft Power
+                BI ensures transformative data visualization and analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <div
+              class="container"
+              style="width: 100%; height: 250px; overflow: hidden"
+            >
+              <img
+                src="{% static 'images/Pragati Dhoundiyal.jpeg' %}"
+                alt="Avatar"
+                style="width: 100%; height: auto"
+              />
+            </div>
+            <div class="container" style="width: 100%; height: 240px">
+              <h4><b>Pragati Dhoundiyal</b></h4>
+              <p class="description">
+                With Software Developer experience at Tech Mahindra and a
+                Master's degree in Business Analytics from UCD, she excels in
+                data analysis, visualization, and software development.
+                Proficient in R, Python, Java, SQL, PowerBI, Tableau, and DBMS,
+                she is a dedicated learner and a valuable asset for any
+                organization, making a positive impact in the industry.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <div
+              class="container"
+              style="width: 100%; height: 250px; overflow: hidden"
+            >
+              <img
+                src="{% static 'images/Mel Devine.jpeg' %}"
+                alt="Avatar"
+                style="width: 100%; height: auto"
+              />
+            </div>
+            <div class="container" style="width: 100%; height: 240px">
+              <h4><b>Vishal</b></h4>
+              <p class="description">
+                Vishal is currently a Master's student at UCD Smurfit, with
+                background in Computer Science. He has worked in Product
+                Mangement and Business Operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div
+              class="container"
+              style="width: 100%; height: 250px; overflow: hidden"
+            >
+              <img
+                src="{% static 'images/Mel Devine2.jpeg' %}"
+                alt="Avatar"
+                style="width: 100%; height: auto"
+              />
+            </div>
+            <div class="container" style="width: 100%; height: 240px">
+              <h4><b>Mel Devine</b></h4>
+              <p class="description">
+                Mel Devine is an Ad Astra fellow and an Assistant Professor in
+                the College of Business in UCD. Mel is also a member of UCD's
+                Energy Institute. He holds a PhD in Applied Mathematics and BSc
+                in Mathematical Sciences from the University of Limerick (UL).
+                The title of thesis was “Rolling optimisation, stochastic demand
+                modelling and scenario reduction applied to the UK gas market”.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <div
+              class="container"
+              style="width: 100%; height: 250px; overflow: hidden"
+            >
+              <img
+                src="{% static 'images/Dr. Samir Mirdad.jpeg' %}"
+                alt="Avatar"
+                style="width: 100%; height: auto"
+              />
+            </div>
+            <div class="container" style="width: 100%; height: 240px">
+              <h4><b>Dr. Samir Mirdad</b></h4>
+              <p class="description">
+                A visionary CEO, a trusted global strategist with an unmatched
+                expertise in facilitating multibillion-dollar business deals.
+                Specializing in growth strategy, high-value acquisitions, and
+                large-scale solutions, he has achieved remarkable success across
+                technology, AI, aviation, oil & gas, telecom, energy, finance,
+                and defense sectors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%include 'footer.html'%}
+  </body>
+</html>

@@ -1,0 +1,45 @@
+:root{
+    --gradientColor: linear-gradient(to right, hsl(199, 96%, 28%),
+    hsl(187, 85%, 43%));
+  }
+body{
+    background-color: rgb(5,25,62);
+}
+.predict-body{
+    text-align: center;
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    width:50%;
+    height:60%;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -25em; /*set to a negative number 1/2 of your width*/
+    border-radius: 2rem;
+    background-color: rgb(240, 243, 243);   
+}
+.heading{
+    background-color: black;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+
+.predicted-value{
+    width: 80%;
+    margin-left: 10%;
+}
+.btn-col{
+    background-color: black;
+}
+.select-option{
+    width: 100px;
+}
+.select-droup{
+    float: right;
+    background-color: aliceblue;
+}
