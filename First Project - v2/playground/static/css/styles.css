@@ -1,0 +1,90 @@
+:root{
+  --gradientColor: linear-gradient(to right, hsl(199, 96%, 28%),
+  hsl(187, 85%, 43%));
+  --bodyColor: linear-gradient(to right, rgb(239,246,255),
+  rgb(185, 210, 243));
+}
+
+html { 
+  overflow-y: scroll; 
+  overflow-x:hidden; 
+}
+body{
+  background-color: rgb(5,25,62);
+}
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.details-body{
+  background-color: #ffffff;
+  text-align: left;
+  height: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 10px 100px 20px 100px;
+  border-radius: 0rem 4rem;
+  border-style: outset;
+  box-shadow: 5px 5px 10px rgb(14, 133, 236);
+  font-family: Arial;
+}
+.heading{
+  text-align: center;
+  font-size: 180%;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-family: Arial;
+}
+.body-card{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  align-content: center;
+  margin-bottom: 32%;
+}
+
+.div1{
+  float: left;
+  border-style: outset;
+  border-radius: 1rem;
+  background: black;
+  color: white;
+  box-shadow: 5px 5px 10px rgb(14, 133, 236);
+}
+.div2{
+  float: right;
+  border-style: outset;
+  background: black;
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgb(14, 133, 236);
+}
+.common-footer{
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.btn-col{
+  background: var(--gradientColor);
+}
+
+.glossbody{
+  color: white;
+  text-align: center;
+}
+
+@media(max-width: 768px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
+}

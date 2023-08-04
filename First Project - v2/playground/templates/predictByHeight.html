@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/predictByHeight.css' %}" />
+</head>
+<body>
+    <script>
+        function myFunction() {
+            var fathervalue = parseFloat(document.getElementById("num1").value);
+            var mothervalue = parseFloat(document.getElementById("num2").value);
+            {% comment %} method call for prediction and update avarage {% endcomment %}
+            var average = (fathervalue + mothervalue) / 2;
+            var x = document.getElementById("result");
+            var progressBar = document.getElementById("progressBar");
+            var error = document.getElementById("error");
+
+            progressBar.value = average;
+            document.getElementById("value").textContent = average;
+            if(fathervalue>3.5 || mothervalue>3.5){
+                error.style.display = "block";
+                x.style.display = "none";
+                progressBar.style.display = "none   ";
+            }
+            else{
+                x.style.display = "block";
+                progressBar.style.display = "block";
+                error.style.display = "none";
+            }
+        }
+        </script>
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="cart">
+        <div class="heading">Predict By Parents Height</div>
+        <div class="body">
+            Male Horse :   
+               <input id="num1" class="inputbox" name ="fathername" type="number" min="0" step="1"style="margin-left: 47px;"/>
+        </div>
+        <div class="body">
+            Female Horse :   
+               <input id="num2" class="inputbox" name ="mothername" type="number" min="0" step="1"/>
+               <button class="button" id="ph" onclick="myFunction()">Predict</button>
+               <div class="error" id="error"> Jump can't be more than 3.5m</div>
+        </div>
+        <div id="result" class="body" style="display: none;">
+            Predicted Height : <span id="value">0</span>
+        </div><br>
+        <progress id="progressBar" value="0" max="3.5"></progress>
+    </div>
+</div>
+<div class="footer">
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>
