@@ -17,3 +17,6 @@ def aboutUs(request):
 
 def faq(request):
     return render(request, 'faq.html')
+
+def glossary(request):
+    return render(request, 'glossary.html')

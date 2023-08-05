@@ -56,7 +56,6 @@
     width: 90%;
     height: 10px;
     display: none;
-    padding-top: 10px;
 }
 .error{
     display: none;
@@ -76,5 +75,4 @@
 .resultshow{
     font-size: medium;
     color : rgb(31, 96, 31);
-    margin-bottom: 10px;
 }

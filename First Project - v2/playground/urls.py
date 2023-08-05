@@ -7,5 +7,6 @@ urlpatterns = [
     path('predictbyname', views.predictByName),
     path('predictbyheight', views.predictByHeight),
     path('aboutus', views.aboutUs),
-    path('faq', views.faq)
+    path('faq', views.faq),
+    path('glossary', views.glossary)
 ]

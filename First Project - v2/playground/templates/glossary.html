@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/glossary.css' %}" />
+  </head>
+  <body>
+    {% include 'navbar.html'%}
+    <div class="container">
+        <div class="box">
+            <h1 style="text-align: center;">Glossary Terms</h1>
+            <ul>
+                <li><strong>Sire :</strong> <i>A sire is a male horse used for breeding. The sire contributes half of the genetic material to the offspring.</i></li>
+                <li><strong>Dam :</strong> <i>A dam is a female horse used for breeding. The dam also contributes half of the genetic material to the offspring.</i></li>
+                <li><strong>Foal :</strong> <i>A foal is a young horse, usually less than one year old, either male or female. It is the result of the mating between a sire and a dam.</i></li>
+                <li><strong>Colt :</strong> <i>A colt is a young male horse that is typically under four years old.</i></li>
+                <li><strong>Filly :</strong> <i>A filly is a young female horse that is typically under four years old.</i></li>
+                <li><strong>Stallion :</strong> <i>A stallion is an uncastrated (intact) adult male horse, typically used for breeding purposes.</i></li>
+                <li><strong>Mare :</strong> <i>A mare is an adult female horse, typically used for breeding purposes.</i></li>
+                <li><strong>Gelding :</strong> <i>A gelding is a castrated male horse. Geldings are often used for riding and driving purposes, but they cannot be used for breeding.</i></li>
+                <li><strong>Stud :</strong> <i>A stud refers to a male horse that is used for breeding purposes. It can also refer to a breeding facility where stallions are kept for breeding.</i></li>
+                <li><strong>Broodmare :</strong> <i>A broodmare is a mare specifically used for breeding purposes. These mares are selected based on their genetic pedigree and ability to produce quality offspring.</i></li>
+                <li><strong>In-foal :</strong> <i>A mare is said to be "in-foal" when she is confirmed to be pregnant and carrying a developing foal.</i></li>
+                <li><strong>Covering :</strong> <i>Covering refers to the act of mating between a stallion and a mare. It is the process of sexual reproduction in horses.</i></li>
+                <li><strong>Bloodlines :</strong> <i>Bloodlines refer to the pedigree or ancestral lineage of a horse. It denotes the lineage of sires and dams that have contributed to the genetic makeup of the horse.</i></li>
+            </ul>
+        </div>
+    </div>
+    {%include 'footer.html'%}
+  </body>
+</html>
