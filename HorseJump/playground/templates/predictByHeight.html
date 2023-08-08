@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Using CDN (in HTML file) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/predictByHeight.css' %}" />
+</head>
+
+<body>
+    <script>
+        function myFunction() {
+            var fathervalue = parseFloat(document.getElementById("num1").value);
+            var mothervalue = parseFloat(document.getElementById("num2").value);
+            {% comment %} method call for prediction and update avarage {% endcomment %}
+            var url = window.location.origin + '/predict_by_height';
+            var predicted_value;
+            axios({ method: "get", url: url, params: { 'sire_height': fathervalue, 'dam_height': mothervalue } })
+                .then(response => {
+                    predicted_value = response.data.predicted_value;
+                    var average = predicted_value.toFixed(2);
+                    var x = document.getElementById("result");
+                    var progressBar = document.getElementById("progressBar");
+                    var error = document.getElementById("error");
+
+                    progressBar.value = average;
+                    document.getElementById("value").textContent = average;
+                    if (fathervalue > 219 || mothervalue > 219) {
+                        error.style.display = "block";
+                        x.style.display = "none";
+                        progressBar.style.display = "none   ";
+                    }
+                    else {
+                        x.style.display = "block";
+                        progressBar.style.display = "block";
+                        error.style.display = "none";
+                    }
+
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error:', error);
+                });
+
+        }
+        function progressBarFill1() {
+            var father = document.getElementById("num1")
+            var fathervalue = parseFloat(father.value);
+            progressBar1.value = fathervalue;
+            if (fathervalue < 219 && fathervalue > 0) {
+                progressBar1.style.display = "block";
+            }
+            else {
+                progressBar1.style.display = "none";
+            }
+        }
+        function progressBarFill2() {
+            var mother = document.getElementById("num2")
+            var mothervalue = parseFloat(mother.value);
+            progressBar2.value = mothervalue;
+            if (mothervalue < 219 && mothervalue > 0) {
+                progressBar2.style.display = "block";
+            }
+            else {
+                progressBar2.style.display = "none";
+            }
+        }
+    </script>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="cart">
+            <div class="heading">Predict By Parents Height</div>
+            <div class="body">
+                Male Horse :
+                <input id="num1" onchange="progressBarFill1()" class="inputbox" name="fathername" type="number" min="0"
+                    step="1" style="margin-left: 47px;" />
+                <progress id="progressBar1" value="0" max="219"></progress>
+            </div>
+            <div class="body">
+                Female Horse :
+                <input id="num2" onchange="progressBarFill2()" class="inputbox" name="mothername" type="number" min="0"
+                    step="1" />
+                <progress id="progressBar2" value="0" max="219"></progress>
+                <button class="button" id="ph" onclick="myFunction()">Predict</button>
+                <div class="error" id="error"> Height can't be more than 219 cm</div>
+            </div>
+            <div id="result" class="body" style="display: none;">
+                Predicted Height : <span id="value">0</span>
+            </div><br>
+            <progress id="progressBar" value="0" max="219"></progress>
+        </div>
+    </div>
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+</html>

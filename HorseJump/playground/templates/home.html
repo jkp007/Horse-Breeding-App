@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
+  <body>
+    {% include 'navbar.html'%}
+    <div class="details-body">
+        <div class="heading">Welcome to ProJump - Where Science Meets Speed!</div>
+        Are you a horse enthusiast eager to unlock the secrets of horse breeding and predict 
+        the potential heights of future champions? Look no further! ProJump is your ultimate equine genetics 
+        tool that takes the guesswork out of horse breeding.
+        <br><br>
+        Whether you're a seasoned breeder aiming for greatness or a curious horse lover dreaming of the perfect combination, 
+        ProJump utilizes cutting-edge algorithms and a vast database of pedigree information to 
+        calculate the anticipated jump height of your equine offspring.
+        <br><br>
+        Say goodbye to uncertainty and embrace the power of precision breeding. Our user-friendly interface allows you to 
+        effortlessly input the details of two specific horses, and within moments, you'll receive an accurate 
+        forecast of their offspring's jumping ability.
+        <br><br>
+        Get ready to embark on a journey of discovery as you explore various breeding combinations and unlock the full 
+        potential of your horses. Elevate your breeding decisions, and let ProJump guide you toward breeding excellence.
+        <br><br>
+        Ready to witness the next generation of soaring champions? Start predicting with ProJump now and be at the forefront of equestrian evolution!
+    </div>
+    <div class="body-card">
+        <div class="div1">
+            <div
+                class="max-w-sm p-6"
+            >
+                <a href="#">
+                <h5
+                    class="mb-2 text-xl font-bold tracking-tight"
+                >
+                Prediction by Parents' name
+                </h5>
+                </a>
+                <p class="mb-3 font-normal">
+                    Predict the offspring's jumping height by entering the parents' name
+                </p>
+                <a
+                href="predictbyname"
+                class="btn-col inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                Predict By Name
+                <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                >
+                    <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="div2">
+            <div
+                class="max-w-sm p-6 rounded-lg shadow"
+            >
+                <a href="predictbyheight">
+                <h5
+                    class="mb-2 text-xl font-bold tracking-tight"
+                >
+                Prediction by Parent Height
+                </h5>
+                </a>
+                <p class="mb-3 font-normal">
+                    Predict the offspring's jumping height by entering parents' jumping height
+                </p>
+                <a
+                href="predictbyheight"
+                class="btn-col inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                Predict By Size
+                <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                >
+                    <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    {%include 'footer.html'%}
+  </body>
+</html>

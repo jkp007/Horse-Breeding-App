@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/predictByHeight.css' %}" />
+</head>
+
+<body>
+    <script>
+        function myFunction() {
+            var father = document.getElementById("num1")
+            var fathervalue = parseFloat(father.value);
+            var fathername = father.options[father.selectedIndex].text;
+
+            console.log();
+
+            var mother = document.getElementById("num2")
+            var mothervalue = parseFloat(mother.value);
+            var mothername = mother.options[mother.selectedIndex].text;
+
+            var breedsText = fathername + " and " + mothername;
+            document.getElementById("breeds").innerHTML = breedsText;
+            {% comment %} method call for prediction and update avarage {% endcomment %}
+            var url = window.location.origin + '/predict_by_height';
+            axios({ method: "get", url: url, params: { 'sire_height': fathervalue, 'dam_height': mothervalue } })
+                .then(response => {
+                    predicted_value = response.data.predicted_value;
+
+                    var average = predicted_value.toFixed(2);
+                    var x = document.getElementById("result");
+                    var progressBar = document.getElementById("progressBar");
+                    var error = document.getElementById("error");
+
+                    progressBar.value = average;
+
+                    progressBar2.value = mothervalue;
+                    document.getElementById("value").textContent = average;
+                    if (fathervalue > 219 || mothervalue > 219) {
+                        error.style.display = "block";
+                        x.style.display = "none";
+                        progressBar.style.display = "none";
+                        progressBar1.style.display = "none";
+                        progressBar2.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        progressBar.style.display = "block";
+
+                        progressBar2.style.display = "block";
+                        error.style.display = "none";
+                    }
+
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        function progressBarFill1() {
+            var father = document.getElementById("num1")
+            var fathervalue = parseFloat(father.value);
+            progressBar1.value = fathervalue;
+            if (fathervalue < 219 && fathervalue > 0) {
+                progressBar1.style.display = "block";
+            }
+            else {
+                progressBar1.style.display = "none";
+            }
+        }
+            function progressBarFill2() {
+                var mother = document.getElementById("num2")
+                var mothervalue = parseFloat(mother.value);
+                progressBar2.value = mothervalue;
+                if (mothervalue < 219 && mothervalue > 0) {
+                    progressBar2.style.display = "block";
+                }
+                else {
+                    progressBar2.style.display = "none";
+                }
+            }
+    </script>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="cart">
+            <div class="heading">Predict By Parents' name</div>
+            <div class="body">
+                Male Horse :
+                <select id="num1" class="dropdown1" onchange="progressBarFill1()">
+                    <option value=0>Please Select the name</option>
+                    {% for key, value in male.items %}
+                    <option value={{value}}>{{key}}</option>
+                    {% endfor %}
+                </select>
+                <progress id="progressBar1" value="0" max="219"></progress>
+            </div>
+            <div class="body" class="dropdown2">
+                Female Horse :
+                <select id="num2" onchange="progressBarFill2()">
+                    <option value=0>Please Select the name</option>
+                    {% for key, value in female.items %}
+                    <option value={{value}}>{{key}}</option>
+                    {% endfor %}
+                </select>
+                <progress id="progressBar2" value="0" max="219"></progress>
+                <button class="button" id="ph" onclick="myFunction()">Predict</button>
+            </div>
+            <div id="result" class="body" style="display: none;font-size: medium;margin-bottom: 10px;">
+                The predicted jumping height of the offspring of <span id="breeds">0</span> is expected to be <span
+                    id="value" style="color : green">0</span> metres.
+            </div><br>
+            <progress id="progressBar" value="0" max="219"></progress>
+        </div>
+    </div>
+    <div class="footer">
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+</html>

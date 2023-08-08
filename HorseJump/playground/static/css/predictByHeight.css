@@ -1,0 +1,75 @@
+:root {
+    --gradientColor: linear-gradient(to right, hsl(199, 96%, 28%),
+            hsl(187, 85%, 43%));
+    --bodyColor: linear-gradient(to right, rgb(239, 246, 255),
+            rgb(185, 210, 243));
+}
+
+.container {
+    background-color: rgb(5, 25, 62);
+    height: 600px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart {
+
+    background-color: white;
+    height: auto;
+    width: 500px;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px;
+    display: grid;
+}
+
+.heading {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    padding-top: 5%;
+}
+
+.body {
+    padding-left: 10%;
+    padding-top: 7%;
+    font-size: large;
+    display: inline;
+    float: left;
+}
+
+.inputbox {
+    margin-left: 30px;
+    border: 2px solid #5a5656;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 175px;
+    background: var(--gradientColor);
+    border-radius: 1rem;
+}
+
+progress {
+    margin: 20px;
+    width: 90%;
+    height: 10px;
+    display: none;
+}
+
+.error {
+    display: none;
+    color: red;
+    text-align: center;
+    padding-top: 10px;
+}
