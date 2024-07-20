@@ -1,47 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/aboutUs.css' %}"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    {% include 'navbar.html'%}
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <div
-              class="container"
-              style="width: 100%; height: 250px; overflow: hidden"
-            >
-              <img
-                src="{% static 'images/Pratyusha Tripathi.jpeg' %}"
-                alt="Avatar"
-                style="width: 100%; height: auto"
-              />
-            </div>
-            <div class="container" style="width: 100%; height: 240px">
-              <h4><b>Pratyusha Tripathi</b></h4>
-              <p class="description">
-                A Computer Science engineer who is pursuing her MS in Business
-                Analytics graduate from UCD Michael Smurfit Graduate Business
-                School, she brings invaluable expertise in optimization,
-                statistical methods, and data management. With a track record of
-                driving data-driven insights as a consultant at ZS Associates
-                and E&Y her proficiency in Python, Tableau, and Microsoft Power
-                BI ensures transformative data visualization and analysis.
-              </p>
-            </div>
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/aboutUs.css' %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  {% include 'navbar.html'%}
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container" style="width: 100%; height: 250px; overflow: hidden">
+            <img src="{% static 'images/JKP Potrait.jpg' %}" alt="Avatar" style="width: 100%; height: auto" />
+          </div>
+          <div class="container" style="width: 100%; height: 240px">
+            <h4><b>Jeet Kumar Pal</b></h4>
+            <p class="description">
+              Data Enthusiast skilled in Python, SQL, MongoDB, Power Bi, and Tableau. Experience with ETL,
+              Data Modeling, Machine Learning, Deep Learning, Web Frameworks [ Django, FastAPI, Flask ],
+              Generative AI [ OpenAI, Gemini, Claude ], Clouds [ Azure & AWS ].
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="column">
+      <!-- <div class="column">
           <div class="card">
             <div
               class="container"
@@ -143,8 +130,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    {%include 'footer.html'%}
-  </body>
+      {%include 'footer.html'%}
+</body>
+
 </html>
